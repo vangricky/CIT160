@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Math</title>
+<script>
+/* Input: First Number, Operator, Second Number, Answer
+
+ * Processing: After inputted inputs, user will click on the "Check" button
+                and then it will check if the math equation is correct or incorrect. 
+
+ * Output: It will display something along the lines of: "correct" if answer is right,
+            or it will display "incorrect" if answer is wrong.
+ */
+
+
+function calculate() {
+    let firstNum = parseFloat(document.getElementById('firstDigit').value);
+    let secondNum = parseFloat(document.getElementById('secondDigit').value);
+    let operator = document.getElementById('equation').value;
+    let answer = parseFloat(document.getElementById('answer').value)
+
+    let finalAnswer;
+
+    switch(operator) {
+        case '+': 
+            finalValue = firstNum + secondNum
+            if (finalValue == answer) {
+            finalAnswer = "Correct! Good Job!"
+            } else {
+                finalAnswer = "Incorrect! Try Again!"
+            }
+            break;
+        case '-': 
+            finalValue = firstNum - secondNum
+            if (finalValue == answer) {
+            finalAnswer = "Correct! Good Job!"
+            } else {
+                finalAnswer = "Incorrect! Try Again!"
+            }
+            break;
+        case 'x': 
+            finalValue = firstNum * secondNum
+            if (finalValue == answer) {
+            finalAnswer = "Correct! Good Job!"
+            } else {
+                finalAnswer = "Incorrect! Try Again!"
+            }
+            break;
+        case '/': 
+            finalValue = firstNum / secondNum
+            if (finalValue == answer) {
+            finalAnswer = "Correct! Good Job!"
+            } else {
+                finalAnswer = "Incorrect! Try Again!"
+            }
+            break;
+    }
+
+    document.getElementById('output').innerHTML = finalAnswer
+}
+
+</script>
+</head>
+
+<body>
+    <h1>Test Your Math Skills!</h1>
+    <input type="number" id="firstDigit" placeholder="First Number">
+    <input type="text" id="equation" placeholder="Operator (+, - , x, /)">
+    <input type="number" id="secondDigit" placeholder="Second Number">
+    = 
+    <input type="number"  id="answer" placeholder="Your Answer">
+    <div id="output"></div>
+    <button type="button" onclick="calculate()">Check</button>
+</body>
+</html>

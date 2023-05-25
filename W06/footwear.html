@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Foot Wear</title>
+<script>
+/* Input: How the weather is outside. 
+        EX: hot, rain, snow, etc
+
+ * Processing: Depending on what you inputed, it will go through a function
+                and tell you what you need to wear.
+
+ * Output: if "how, rain, snow" was inputed, it will output a specific decision,
+            anything else will give you the output of "shoes"
+ */
+
+ function footWear(){
+    let weather = (document.getElementById('weatherLike').value)
+    if (weather == "hot") {
+        clothes = "sandals"
+    } else if (weather == "rain") {
+        clothes = "galoshes"
+    } else if (weather == "snow") {
+        clothes = "boots"
+    } else {
+        clothes = "shoes"
+    }
+
+    document.getElementById('shoe').innerHTML = clothes;
+}
+
+</script>
+</head>
+
+<body>
+    <h1>What shall you wear to protect your feet today?</h1>
+    What's the weather like? <input type="text" id="weatherLike"><br>
+    <button type="button" onclick="footWear()">I suggest you wear:</button><br>
+    <div id="shoe"></div>
+</body>
+</html>

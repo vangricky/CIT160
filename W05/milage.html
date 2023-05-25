@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miles per Gallon Calculator</title>
+    <script>
+        /*
+        DEFINING TABLE:
+
+        INPUT: 1. Starting odometer
+               2. Ending odometer
+               3. Gallons of gas used on trip
+        PROCESSING: Calculates miles per gallon
+               - calculates miles driven by subtracting ending odometer with starting odometer
+               - calculates miles per gallon by diving miles driven with gallons of gas used
+               - outputs miles per gallon on the next line
+        OUTPUT: miles per gallon
+        */
+
+        function computempg() {
+            let startOdom = parseFloat(document.getElementById('startOdom').value);
+            let endOdom = parseFloat(document.getElementById('endOdom').value);
+            let gas = parseFloat(document.getElementById('gas').value);
+
+            let milesDriven = endOdom - startOdom
+            let milesPerGallon = milesDriven / gas
+            document.getElementById('milesPerGallon').innerHTML = milesPerGallon;
+        }
+
+    </script>
+</head>
+<body>
+    
+    <div id="inputDiv">
+        Starting Odometer: <input type="text" id="startOdom"> <br>
+        Ending Odometer: <input type="text" id="endOdom"> <br>
+        Gallons of Gas Used on Trip: <input type="text" id="gas"> <br>
+        <button type="button" onclick="computempg()">Compute Miles per Gallon for Trip</button>
+    </div>
+    <div id="milesPerGallon">
+    </div>
+
+
+</body>
+</html>

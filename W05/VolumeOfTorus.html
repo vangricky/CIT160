@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Volume of a Torus</title>
+<script>
+/*
+DEFINING TABLE:
+INPUT: 1. Inner Radius
+       2. Outer Radius
+PROCESSING: Computes and outputs the volume of a torus.
+        1. 3.14 ** 2 * (inner+outer)*(inner-outer)**2)/4
+OUTPUT: Volume
+*/
+
+function computeVolume() {
+    let inner = parseFloat(document.getElementById('inner').value);
+    let outer = parseFloat(document.getElementById('outer').value);
+    let volume = (Math.PI ** 2 * (inner + outer) * (inner - outer) ** 2) / 4
+    let v = volume.toFixed(2)
+    document.getElementById('volume').innerHTML = v;
+}
+
+</script>
+</head>
+
+<body>
+    <h1>Volume of a Torus</h1>
+    Inner radius <input type="text" id="inner"><br>
+    Outer radius <input type="text" id="outer"><br>
+    <button type="button" onclick="computeVolume()">Volume</button><br>
+    Volume <div id="volume"></div>
+</body>
+</html>

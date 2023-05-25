@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quarts to Liters</title>
+    <script>
+        /*
+        DEFINING TABLE:
+
+        INPUT: One Value: amount of quart(s)
+        PROCESSING: Computes quarts to liters
+            - gets the amount of quarts that was inputed by user
+            - multiply user input by .946353 (1 quart = .946353 liters)
+            - store results
+            - outputs on next line
+        OUTPUT: amount of quart(s) in liters
+        */
+
+        function computerLiters(){
+            var quarts = parseFloat(document.getElementById('quarts').value);
+            var liters = quarts * .946353
+            document.getElementById('liters').innerHTML = liters;
+        }
+    </script>
+</head>
+<body>
+    <div id="inputDiv">
+        Quarts <input type="text" id="quarts"> <br>
+        <button type="button" onclick="computerLiters()">Compute to Liters</button>
+    </div>
+    <div id="liters">
+    </div>
+
+    
+</body>
+</html>

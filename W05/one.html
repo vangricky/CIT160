@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compute</title>
+    <script>
+        /*
+        Input: two values: total number of boxes, and a desired number
+        of boxes in each stack
+        Processing:
+            -Get the total number of boxes from the page
+            -Get the total desired number of boxes in each stack from page
+            -Divide total boxes by the desired boxes in each stack and
+                store result
+            -Write the result to the page
+        Output: total number of stacks required
+        */
+        function computeStacks() {
+            var totalBoxes = parseInt(document.getElementById('totalBoxes').value);
+            var desiredBoxes = parseInt(document.getElementById('stackBoxes').value);
+
+            var result = totalBoxes / desiredBoxes;
+
+            document.getElementById('outputDiv').innerHTML = result;
+        }
+
+        function fahrToCels() {
+            // Read a Fahrenheit temperature from the user.
+            var text = document.getElementById('fahren').value;
+
+            // Convert what the user typed from text into a number.
+            var fahren = parseFloat(text);
+
+            // Convert the Fahrenheit temperature into Celsius.
+            var celsius = 5 / 9 * (fahren - 32);
+
+            // Display the Celsius temperature to the user.
+            document.getElementById('celsius').innerHTML = celsius;
+}
+    </script>
+</head>
+<body>
+    <div id="inputDiv">
+        Total Boxes <input type="text" id="totalBoxes" /> <br/>
+        Boxes in each stack <input type="text" id="stackBoxes" /> <br/>
+        <button type="button" onclick="computeStacks()">Number of Stacks</button><br/>
+    </div>
+    <div id="outputDiv">
+
+    </div>
+
+    <br>
+
+    <div id=""">
+        fahren <input type="text" id="fahren" /> <br/>
+        <button type="button" onclick="fahrToCels()">Compute Fahr</button><br/>
+    </div>
+    <div id="celsius">
+
+
+</body>
+</html>
