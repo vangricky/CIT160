@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SumOdds</title>
+    <script>
+        /*
+        INPUT: User inputs any positive integer.
+        PROCESSING: Program adds all 'odd' numbers up to the user input number, then adds it all.
+        OUTPUT: The added odd numbers leading up to the user input.
+        */
+        function sumOdds() {
+            let userInput = parseInt(document.getElementById("integer").value);
+            let sumOdd = 0
+
+            for (let i = 1; i <= userInput; i += 2) {
+                sumOdd += i
+            }
+            document.getElementById("output").innerHTML = sumOdd
+        }
+    </script>
+</head>
+<body>
+    Please enter an integer: <input type="text" id="integer"> <br>
+    <button type="button" onclick="sumOdds()">Click to Add Odds</button>
+    <div id="output"></div>
+    
+</body>
+</html>

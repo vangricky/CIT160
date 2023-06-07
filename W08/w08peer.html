@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sum of Odds</title>
+  <script>
+    function calculateSum() {
+      var n = parseInt(document.getElementById("number").value);
+      var sum = 0;
+      
+      for (var i = 1; i <= n; i += 2) {
+        sum += i;
+      }
+      
+      document.getElementById("result").innerHTML = "Sum of odd integers between 1 and " + n + " is: " + sum;
+    }
+  </script>
+</head>
+<body>
+  <h1>Sum of Odd Integers</h1>
+  
+  <table>
+    <tr>
+      <td>Enter a number:</td>
+      <td><input type="number" id="number"></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button onclick="calculateSum()">Calculate</button>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" id="result"></td>
+    </tr>
+  </table>
+  
+</body>
+</html>
