@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discount</title>
+<script>
+    /* 
+    INPUT: subtotal
+    PROCESSING: if the subtotal is greater than 50, AND if today is Tuesday or Wednesday,
+                subtract 10% from subtotal, and the nadd sales tax of 6% onto it. If not 
+                one of those two days, do not give the 10% discount.
+    OUTPUT: final subtotal
+    */
+
+var dayOfWeek = new Date().getDay();
+function computeTotal() {
+    let userInput = parseFloat(document.getElementById("subtotal").value);
+
+    let finalSubTotal;
+    if (userInput > 50 && (dayOfWeek == 3 || dayOfWeek == 4)) {
+        firstCalc = userInput - (userInput / 10)
+        secCalc = (firstCalc * 0.06) + firstCalc
+        finalSubTotal = secCalc.toFixed(2)
+    } else {
+        percent = userInput * 0.06
+        secondCalc = percent + userInput
+        finalSubTotal = secondCalc.toFixed(2)
+        }
+    document.getElementById("output").innerHTML = finalSubTotal;
+}
+</script>
+</head>
+<body>
+Enter your subtotal: <br>
+<input type="text" id="subtotal" placeholder="subtotal"> <br>
+<button type="button" onclick="computeTotal()">Compute</button>
+<div id="output"></div>
+</body>
+</html>

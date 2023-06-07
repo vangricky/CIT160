@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<script>
+function main() {
+var now = new Date();
+var month = now.getMonth();
+var dayOfMonth = now.getDate();
+var dayOfWeek = now.getDay();
+let sleep = '';
+if (dayOfMonth == 25 && month == 11) {
+sleep = 'Sleep In!';
+}
+else if (dayOfMonth == 1 && month == 1) {
+sleep = 'Sleep In!';
+}
+else if (dayOfMonth == 4 && month == 6) {
+sleep = 'Sleep In!'
+}
+else {
+sleep = 'Get Up!'
+}
+
+document.getElementById("output").innerHTML = sleep;
+}
+
+</script>
+<title>Alarm</title>
+</head>
+<body>
+Should I get up or sleep in?
+<button type="button" onClick="main()">Check</button>
+<div id="output"></div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm</title>
+    <script>
+        /*
+        INPUT: Click the 'Check' button to see if you can sleep in or not
+        PROCESSING: Once 'Check' button is pressed, it'll go through a if/else statement to see if todays date allows you to sleep in or not.
+        OUTPUT:get up / sleep in
+        */
+    var now = new Date();
+    var month = now.getMonth();
+    var dayOfMonth = now.getDate();
+    var dayOfWeek = now.getDay();
+    function checkDay() {
+        let day;
+        if (dayOfWeek == 1 || dayOfWeek == 2 || dayOfWeek == 3 || dayOfWeek == 4 || dayOfWeek == 5 ) {
+            day = "Get Up!"
+        } else if (dayOfWeek == 6 || dayOfWeek == 0 || (month == 0 && dayOfMonth == 1) || (month == 6 && dayOfMonth == 4) || (month == 11 && dayOfMonth == 25)) {
+            day = "Sleep in!"
+        }
+        document.getElementById("output").innerHTML = day
+    }
+    </script>
+</head>
+<body>
+
+Let's See If You Can Sleep In Or Not<br>
+<button type="button" onclick="checkDay()">Check</button>
+<div id="output"></div>
+</body>
+</html>
