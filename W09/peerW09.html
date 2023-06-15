@@ -1,0 +1,76 @@
+<!-- <!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>To the Nth Power</title>
+<Script>
+/*
+input:
+- click a button
+Processing:
+- get the number of 2
+- find all the power of 2 from 0 to 31
+Output:
+-
+*/
+function npower() {
+var display = ""
+
+var f = 2
+
+for (var n = 0; n <= 31; n++ ){
+display += " , ";
+var answer = Math.pow (f, n);
+display += answer
+
+}
+
+
+
+document.getElementById('outputdiv').innerHTML = display
+
+
+}
+</Script>
+</head>
+<body>
+<button type="button" onclick="npower()">2 to the nth power</button>
+<div id="outputdiv"></div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>fiveTimes</title>
+<script>
+/* Input:
+- No input
+Processing:
+- create a five times table from 1 to 12
+Output:
+- Times table in the format: 5 X 1 = 5, etc.
+*/
+function fiveTimes() {
+
+const table = document.getElementById('outputDiv');
+
+for (i = 1; i <= 12; i++) {
+const output = `<p>5 X ${i} = ${i*5}</p>`;
+table.innerHTML += output;
+}
+
+}
+</script>
+</head>
+
+<body>
+<label>Five Times Table</label>
+<button type="button" onclick="fiveTimes()">Calculate</button><br><br>
+<div id="outputDiv"></div>
+</body>
+
+</html>

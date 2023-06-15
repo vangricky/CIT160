@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>fiveTimes</title>
+</head>
+<body>
+    <h1>Five Times Table</h1>
+    <p id="output"></p>
+
+
+<script>
+        /*
+        INPUT: No input. Automatically displays multiplication
+        PROCESSING: 5 x i = answer. i starts at 1
+        OUTPUT: answer of 5 x i.
+        */
+
+let text = "";
+
+for (let i = 1; i <= 12; i++) {
+    multiply = 5 * i
+    text += "5 x " + i + " = " + multiply + "<br>"
+}
+document.getElementById("output").innerHTML = text;
+</script>
+</body>
+</html>
