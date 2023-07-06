@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wind Chill</title>
+    <script>
+        /*
+        INPUT: Two integers (temperature and wind speed)
+        PROCESSING: Takes those two integers and place them in the wind chill formula (f = 35.74 + 0.6215 t - 35.75 s0.16 + 0.4275 t s0.16), where f is the wind chill factor in Fahrenheit, t is the air temperature in Fahrenheit, and s is the wind speed
+        OUTPUT: answer from the calculation
+       */
+
+        function doInputOut() {
+            let temperature = parseInt(document.getElementById("temperature").value)
+            let windspeed = parseInt(document.getElementById("windspeed").value)
+            let calcWindChill = windChill(temperature, windspeed)
+            let finalWindChill = Math.trunc(calcWindChill)
+            
+            document.getElementById("output").innerHTML = finalWindChill;
+        }
+
+        function windChill(tempF, speed) {
+            let f = 35.74 + 0.6215 * tempF - 35.75 * speed ** 0.16 + 0.4275 * tempF * speed ** 0.16
+            return f
+        }
+
+    </script>
+</head>
+<body>
+    <input type="text" placeholder="Temperature" id="temperature">
+    <br>
+    <input type="text" placeholder="Wind Speed" id="windspeed">
+    <br>
+    <button id="windchill" onclick="doInputOut()">Wind Chill</button>
+    <div id="output"></div>
+    
+</body>
+</html>

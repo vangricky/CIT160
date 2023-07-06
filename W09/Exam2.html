@@ -1,0 +1,73 @@
+<!-- <!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Title</title>
+<script>
+/* Input: 2 inputs, two integers.   
+ * Processing: If both numbers are greather than 5, or if their sum is greather than 20, display True. Else, display False.
+ * Output: True or False
+ */
+
+ function calc() {
+    let inputOne = parseInt(document.getElementById("one").value)
+    let inputTwo = parseInt(document.getElementById("two").value)
+    let answer = 0
+    if ((inputOne > 5 && inputTwo > 5) || (inputOne + inputTwo > 20)) {
+        answer = "True"
+    } else {
+        answer = "False"
+    }
+    document.getElementById("output").innerHTML = answer
+ }
+
+</script>
+</head>
+
+<body>
+Please enter two numbers:
+<input type="text" id="one" size="5">
+<input type="text" id="two" size="5">
+<button type="button" onclick="calc()">Click</button>
+<div id="output"></div>
+</body>
+</html> -->
+
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Title</title>
+<script>
+/* Input: Start integer, end integer, and divisor integer.
+ * Processing: See how many the divisor integer can divide from the start integer to the end integer.
+ * Output: All the intger between start and end integers.
+ */
+
+ function calc() {
+    startInput = parseInt(document.getElementById("start").value)
+    endInput = parseInt(document.getElementById("end").value)
+    divisorInput = parseInt(document.getElementById("divisor").value)
+
+    let answer = ""
+
+    for (let i = startInput; i <= endInput; i++) {
+        if (!(i % divisorInput)) {
+            answer += i + " "
+        }
+        
+    }
+    document.getElementById("output").innerHTML = answer;
+ }
+
+</script>
+</head>
+
+<body>
+Start: <input type="text" id="start" size="5"><br>
+End: <input type="text" id="end" size="5"><br>
+Divisor: <input type="text" id="divisor" size="5"><br>
+<button type="button" onclick="calc()">Click</button>
+<div id="output"></div>
+</body>
+</html>

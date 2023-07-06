@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wind</title>
+        <script>
+            function windChill(tempFahr, windS){
+                windChillFactor =  35.74 + 0.6215 * tempFahr - 35.75 * Math.pow(windS,0.16) + 0.4275 * tempFahr * Math.pow(windS,0.16);
+                return windChillFactor;
+            }
+
+            function doInputOutput(){
+                let t = Number(document.getElementById('temp').value);
+                let ws = Number(document.getElementById('wSpeed').value);
+                let wndChillCal = windChill(t, ws);
+
+                document.getElementById('windChillResult').innerHTML ="Wind Chill: " + wndChillCal.toFixed(2);
+            }
+        </script>
+    </head>
+    <body>
+        Temperature: <input type="text" id="temp">
+        <br>
+        <br>
+        Wind Speed: <input type="text" id="wSpeed">
+        <br>
+        <br>
+        <button type="button" onclick="doInputOutput()">Wind Chill</button>
+        <br>
+        <br>
+        <div id="windChillResult"></div>
+    </body>
+</html>
